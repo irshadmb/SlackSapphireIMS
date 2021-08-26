@@ -1,23 +1,21 @@
 
 # Table of Contents
 
-[1. Overview 3](#overview)
+[1. Overview](#overview)
 
-[2. Prerequisites 3](#prerequisites)
+[2. Prerequisites](#prerequisites)
 
-[3. Development 3](#development)
+[3. Development](#development)
 
-[**Setting Up an App** 3](#setting-up-an-app)
+[**Setting Up an App**](#setting-up-an-app)
 
-[**Build SapphireIMS Bot using Bolt**
-7](#build-sapphireims-bot-using-bolt)
+[**Build SapphireIMS Bot using Bolt**](#build-sapphireims-bot-using-bolt)
 
-[**Setting Events Registration** 12](#setting-events-registration)
+[**Setting Events Registration**](#setting-events-registration)
 
-[**Setting Slash Command** 13](#setting-slash-command)
+[**Setting Slash Command**](#setting-slash-command)
 
-[**Making SapphireIMS bot App Interactive**
-14](#making-sapphireims-bot-app-interactive)
+[**Making SapphireIMS bot App Interactive**](#making-sapphireims-bot-app-interactive)
 
 #  Overview
 
@@ -110,11 +108,11 @@ Step -2 : Create a file index.js which will our main file.
 Step -3 : Add the following code as below in index.js
 ```
 +-----------------------------------------------------------------------+
-| const { App } = require('\@slack/bolt');                            |
+| const { App } = require('\@slack/bolt');                              |
 |                                                                       |
-| var createTicket = require('./createRequest');                      |
+| var createTicket = require('./createRequest');                        |
 |                                                                       |
-| const payload = require('./payload');                               |
+| const payload = require('./payload');                                 |
 |                                                                       |
 | const app = new App({                                                 |
 |                                                                       |
@@ -130,7 +128,7 @@ Step -3 : Add the following code as below in index.js
 |                                                                       |
 | await app.start(process.env.PORT \|\| 3000);                          |
 |                                                                       |
-| app.command('/createincident', async ({ command, ack, body, client  |
+| app.command('/createincident', async ({ command, ack, body, client    |
 | }) => {                                                               |
 |                                                                       |
 | await ack()                                                           |
@@ -163,7 +161,7 @@ Step -3 : Add the following code as below in index.js
 |                                                                       |
 | })                                                                    |
 |                                                                       |
-| app.event('app_mention', async ({ event, say }) => {                |
+| app.event('app_mention', async ({ event, say }) => {                  |
 |                                                                       |
 | console.log(event);                                                   |
 |                                                                       |
@@ -218,55 +216,55 @@ builder](https://app.slack.com/block-kit-builder/TBAKXMP5Y)
 +-----------------------------------------------------------------------+
 | {                                                                     |
 |                                                                       |
-| "type": "modal",                                                  |
+| "type": "modal",                                                      |
 |                                                                       |
-| "title": {                                                          |
+| "title": {                                                            |
 |                                                                       |
-| "type": "plain_text",                                             |
+| "type": "plain_text",                                                 |
 |                                                                       |
-| "text": "Submit a Incident!!!"                                    |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| "callback_id": "submit_ticket",                                   |
-|                                                                       |
-| "submit": {                                                         |
-|                                                                       |
-| "type": "plain_text",                                             |
-|                                                                       |
-| "text": "Submit"                                                  |
+| "text": "Submit a Incident!!!"                                        |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| "blocks": [                                                        |
+| "callback_id": "submit_ticket",                                       |
+|                                                                       |
+| "submit": {                                                           |
+|                                                                       |
+| "type": "plain_text",                                                 |
+|                                                                       |
+| "text": "Submit"                                                      |
+|                                                                       |
+| },                                                                    |
+|                                                                       |
+| "blocks": [                                                           |
 |                                                                       |
 | {                                                                     |
 |                                                                       |
-| "block_id": "title_block",                                        |
+| "block_id": "title_block",                                            |
 |                                                                       |
-| "type": "input",                                                  |
+| "type": "input",                                                      |
 |                                                                       |
-| "label": {                                                          |
+| "label": {                                                            |
 |                                                                       |
-| "type": "plain_text",                                             |
+| "type": "plain_text",                                                 |
 |                                                                       |
-| "text": "Title"                                                   |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| "element": {                                                        |
-|                                                                       |
-| "action_id": "title",                                             |
-|                                                                       |
-| "type": "plain_text_input"                                        |
+| "text": "Title"                                                       |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| "hint": {                                                           |
+| "element": {                                                          |
 |                                                                       |
-| "type": "plain_text",                                             |
+| "action_id": "title",                                                 |
 |                                                                       |
-| "text": "30 second summary of the problem"                        |
+| "type": "plain_text_input"                                            |
+|                                                                       |
+| },                                                                    |
+|                                                                       |
+| "hint": {                                                             |
+|                                                                       |
+| "type": "plain_text",                                                 |
+|                                                                       |
+| "text": "30 second summary of the problem"                            |
 |                                                                       |
 | }                                                                     |
 |                                                                       |
@@ -274,105 +272,105 @@ builder](https://app.slack.com/block-kit-builder/TBAKXMP5Y)
 |                                                                       |
 | {                                                                     |
 |                                                                       |
-| "block_id": "description_block",                                  |
+| "block_id": "description_block",                                      |
 |                                                                       |
-| "type": "input",                                                  |
+| "type": "input",                                                      |
 |                                                                       |
-| "label": {                                                          |
+| "label": {                                                            |
 |                                                                       |
-| "type": "plain_text",                                             |
+| "type": "plain_text",                                                 |
 |                                                                       |
-| "text": "Description"                                             |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| "element": {                                                        |
-|                                                                       |
-| "action_id": "description",                                       |
-|                                                                       |
-| "type": "plain_text_input",                                       |
-|                                                                       |
-| "multiline": true                                                   |
+| "text": "Description"                                                 |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| "optional": true                                                    |
+| "element": {                                                          |
+|                                                                       |
+| "action_id": "description",                                           |
+|                                                                       |
+| "type": "plain_text_input",                                           |
+|                                                                       |
+| "multiline": true                                                     |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| {                                                                     |
-|                                                                       |
-| "block_id": "urgency_block",                                      |
-|                                                                       |
-| "type": "input",                                                  |
-|                                                                       |
-| "label": {                                                          |
-|                                                                       |
-| "type": "plain_text",                                             |
-|                                                                       |
-| "text": "Importance"                                              |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| "element": {                                                        |
-|                                                                       |
-| "action_id": "urgency",                                           |
-|                                                                       |
-| "type": "static_select",                                          |
-|                                                                       |
-| "options": [                                                       |
-|                                                                       |
-| {                                                                     |
-|                                                                       |
-| "text": {                                                           |
-|                                                                       |
-| "type": "plain_text",                                             |
-|                                                                       |
-| "text": "High"                                                    |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| "value": "high"                                                   |
+| "optional": true                                                      |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
 | {                                                                     |
 |                                                                       |
-| "text": {                                                           |
+| "block_id": "urgency_block",                                          |
 |                                                                       |
-| "type": "plain_text",                                             |
+| "type": "input",                                                      |
 |                                                                       |
-| "text": "Medium"                                                  |
+| "label": {                                                            |
+|                                                                       |
+| "type": "plain_text",                                                 | 
+|                                                                       |
+| "text": "Importance"                                                  |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| "value": "medium"                                                 |
+| "element": {                                                          |
+|                                                                       |
+| "action_id": "urgency",                                               |
+|                                                                       |
+| "type": "static_select",                                              |
+|                                                                       |
+| "options": [                                                          |
+|                                                                       |
+| {                                                                     |
+|                                                                       |
+| "text": {                                                             |
+|                                                                       |
+| "type": "plain_text",                                                 |
+|                                                                       |
+| "text": "High"                                                        |
+|                                                                       |
+| },                                                                    |
+|                                                                       |
+| "value": "high"                                                       |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
 | {                                                                     |
 |                                                                       |
-| "text": {                                                           |
+| "text": {                                                             |
 |                                                                       |
-| "type": "plain_text",                                             |
+| "type": "plain_text",                                                 |
 |                                                                       |
-| "text": "Low"                                                     |
+| "text": "Medium"                                                      |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| "value": "low"                                                    |
+| "value": "medium"                                                     |
+|                                                                       |
+| },                                                                    |
+|                                                                       |
+| {                                                                     |
+|                                                                       |
+| "text": {                                                             |
+|                                                                       |
+| "type": "plain_text",                                                 |
+|                                                                       |
+| "text": "Low"                                                         |
+|                                                                       |
+| },                                                                    |
+|                                                                       |
+| "value": "low"                                                        |
 |                                                                       |
 | }                                                                     |
 |                                                                       |
-| ]                                                                    |
+| ]                                                                     |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| "optional": true                                                    |
+| "optional": true                                                      |
 |                                                                       |
 | }                                                                     |
 |                                                                       |
-| ]                                                                    |
+| ]                                                                     |
 |                                                                       |
 | }                                                                     |
 +=======================================================================+
@@ -383,7 +381,7 @@ Step -- 5: Let us create ticket/request logic which will be used to
 create a request in SapphireIMS ( createRequest.js )
 ```
 +-----------------------------------------------------------------------+
-| var request = require('request');                                   |
+| var request = require('request');                                     |
 |                                                                       |
 | module.exports = {                                                    |
 |                                                                       |
@@ -391,53 +389,53 @@ create a request in SapphireIMS ( createRequest.js )
 |                                                                       |
 | var options = {                                                       |
 |                                                                       |
-| 'method': 'POST',                                                 |
+| 'method': 'POST',                                                     |
 |                                                                       |
-| 'url': process.env.SAPP_APP_URL+'/api/ticket/create',             |
+| 'url': process.env.SAPP_APP_URL+'/api/ticket/create',                 |
 |                                                                       |
-| 'headers': {                                                        |
+| 'headers': {                                                          |
 |                                                                       |
-| 'Accept': 'application/json',                                     |
+| 'Accept': 'application/json',                                         |
 |                                                                       |
-| 'Content-Type': 'application/json',                               |
+| 'Content-Type': 'application/json',                                   |
 |                                                                       |
-| 'int-log-id': 'unique_id_for_each_request',                       |
+| 'int-log-id': 'unique_id_for_each_request',                           |
 |                                                                       |
-| 'key': process.env.SAPP_API_KEY,                                    |
+| 'key': process.env.SAPP_API_KEY,                                      |
 |                                                                       |
-| 'token': process.env.SAPP_API_TOKEN                                 |
+| 'token': process.env.SAPP_API_TOKEN                                   |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
 | body: JSON.stringify({                                                |
 |                                                                       |
-| "requestType": "GET_TICKET",                                      |
+| "requestType": "GET_TICKET",                                          |
 |                                                                       |
-| "integrationLogId": "qwertyasdfg",                                |
+| "integrationLogId": "qwertyasdfg",                                    |
 |                                                                       |
-| "iteration": 0,                                                     |
+| "iteration": 0,                                                       |
 |                                                                       |
-| "ticket": {                                                         |
+| "ticket": {                                                           |
 |                                                                       |
-| "project": {                                                        |
+| "project": {                                                          |
 |                                                                       |
-| "projectName": "Service Request"                                  |
-|                                                                       |
-| },                                                                    |
-|                                                                       |
-| "service": {                                                        |
-|                                                                       |
-| "name": "Application Services"                                    |
+| "projectName": "Service Request"                                      |
 |                                                                       |
 | },                                                                    |
 |                                                                       |
-| "title": title,                                                     |
+| "service": {                                                          |
 |                                                                       |
-| "probDescription": desc,                                            |
+| "name": "Application Services"                                        |
 |                                                                       |
-| "submittedBy": {                                                    |
+| },                                                                    |
 |                                                                       |
-| "userName": "admin"                                               |
+| "title": title,                                                       |
+|                                                                       |
+| "probDescription": desc,                                              |
+|                                                                       |
+| "submittedBy": {                                                      |
+|                                                                       |
+| "userName": "admin"                                                   |
 |                                                                       |
 | }                                                                     |
 |                                                                       |
@@ -459,7 +457,7 @@ create a request in SapphireIMS ( createRequest.js )
 |                                                                       |
 | channel: user,                                                        |
 |                                                                       |
-| text: 'Your request id is '+json.requestNumber                      |
+| text: 'Your request id is '+json.requestNumber                        |
 |                                                                       |
 | });                                                                   |
 |                                                                       |
