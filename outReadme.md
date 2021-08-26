@@ -209,13 +209,12 @@ Ex:
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./images/media/image7.png){width="5.500767716535433in"
-height="5.125715223097113in"}
+generated](./images/media/image7.png)
 
 The above form payload is given below for reference which can be created
 by using [slack
 builder](https://app.slack.com/block-kit-builder/TBAKXMP5Y)
-
+```
 +-----------------------------------------------------------------------+
 | {                                                                     |
 |                                                                       |
@@ -377,11 +376,12 @@ builder](https://app.slack.com/block-kit-builder/TBAKXMP5Y)
 |                                                                       |
 | }                                                                     |
 +=======================================================================+
+```
 +-----------------------------------------------------------------------+
 
 Step -- 5: Let us create ticket/request logic which will be used to
 create a request in SapphireIMS ( createRequest.js )
-
+```
 +-----------------------------------------------------------------------+
 | var request = require(\'request\');                                   |
 |                                                                       |
@@ -477,6 +477,7 @@ create a request in SapphireIMS ( createRequest.js )
 |                                                                       |
 | };                                                                    |
 +=======================================================================+
+```
 +-----------------------------------------------------------------------+
 
 Step -- 6: Start the application by running node index.js ( Note : Slack
@@ -507,16 +508,14 @@ Ex:
 
 ![Graphical user interface, text, application, chat or text message
 Description automatically
-generated](./images/media/image8.png){width="4.521464348206474in"
-height="5.552858705161855in"}
+generated](./images/media/image8.png)
 
 Go to left-hand menu and click Slash Commands -\> Click Create New
 Command
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./images/media/image9.png){width="6.264583333333333in"
-height="4.791666666666667in"}
+generated](./images/media/image9.png)
 
 Note: Request URL we have to use same url which our bot is running and
 followed by '/slack/events'
@@ -531,5 +530,4 @@ and make sure it is enabled and check the check box
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./images/media/image10.png){width="6.264583333333333in"
-height="1.2506944444444446in"}
+generated](./images/media/image10.png)
