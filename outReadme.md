@@ -1,57 +1,3 @@
-![](./images/media/image1.png){width="3.2215277777777778in"
-height="1.3409722222222222in"}
-
-![](./images/media/image2.png){width="7.439134951881015in"
-height="2.125585083114611in"}
-
-**\
-**
-
-**Copyright**
-
-Copyright © 2020 [Tecknodreams Software Consulting Pvt.
-Ltd.](http://www.tecknodreams.com) All Rights Reserved.
-
-**Restricted Rights Legend**
-
-This documentation is subject to and made available only pursuant to the
-terms of the Tecknodreams License Agreement and may be used or copied
-only in accordance with the terms of that agreement. It is against the
-law to copy the documentation except as specifically allowed in the
-agreement. This document may not, in whole or in part, be copied
-photocopied, reproduced, translated, or reduced to any electronic medium
-or machine-readable form without prior consent, in writing, from
-Tecknodreams.
-
-Information in this document is subject to change without notice and
-does not represent a commitment on the part of Tecknodreams.
-
-**Document Control**
-
-  -------------------------------------------------------------------------------
-  **Document     Slack                                               
-  Name**         integration                                         
-                 with                                                
-                 SapphireIMS                                         
-  -------------- ------------- ------------ ------------------------ ------------
-  **Author**     Irshad Ahamed                                       
-                 M B                                                 
-
-                 **Version**   **Date**     **Description**          **Sign -
-                                                                     Off**
-
-                 1.0           26-08-2020   Initial draft            
-
-                                                                     
-
-                                                                     
-
-                                                                     
-
-                                                                     
-  -------------------------------------------------------------------------------
-
-# 
 
 # Table of Contents {#table-of-contents .TOC-Heading}
 
@@ -120,8 +66,7 @@ and create an app. In dialog box give app name as SapphireIMS, Choose a
 workspace to install SapphireIMS app and click Create App.
 
 ![screen - Slack config create a slack
-app](./images/media/image3.png){width="6.264583333333333in"
-height="4.654861111111111in"}
+app](./images/media/image3.png)
 
 Once SapphireIMS App is created, click Settings -\> Basic Information
 Screen, scroll down to App Credentials, and find Signing secret by
@@ -129,8 +74,7 @@ clicking Show to reveal it. Copy the string, we have to store in .env
 file.
 
 ![screen - Slack config app
-credentials](./images/media/image4.png){width="6.264583333333333in"
-height="4.654861111111111in"}
+credentials](./images/media/image4.png)
 
 Create a .env file in your nodejs project and add slack related
 environment variables
@@ -143,16 +87,14 @@ the bot to post in channels in which it's added. Also, select chat:write
 public to allow the bot to post public channels.
 
 ![screen - slack config
-scopes](./images/media/image5.png){width="6.264583333333333in"
-height="4.654861111111111in"}
+scopes](./images/media/image5.png)
 
 We must obtain OAuth token, Go to Install App from left hand menu and
 click Install App to workspace button. Once finished, get the bot token
 and paste in .env SLACK_BOT_TOKEN=xoxb-xxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ![screen - slack config
-install](./images/media/image6.png){width="6.264583333333333in"
-height="4.654861111111111in"}
+install](./images/media/image6.png)
 
 ### **Build SapphireIMS Bot using Bolt**
 
@@ -166,7 +108,7 @@ Step -1 : We must install Bold sdk -- To do same we must execute "npm i
 Step -2 : Create a file index.js which will our main file.
 
 Step -3 : Add the following code as below in index.js
-
+```
 +-----------------------------------------------------------------------+
 | const { App } = require(\'\@slack/bolt\');                            |
 |                                                                       |
@@ -257,6 +199,7 @@ Step -3 : Add the following code as below in index.js
 |                                                                       |
 | })();                                                                 |
 +=======================================================================+
+```
 +-----------------------------------------------------------------------+
 
 Step -- 4: Create a file payload.js, which is used for designing the
