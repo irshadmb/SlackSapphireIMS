@@ -1,0 +1,16 @@
+{
+  "name": "SlackSapphireIMS",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "Irshad Ahamed M B",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/bolt": "^3.6.0",
+    "dotenv": "^10.0.0",
+    "request": "^2.88.2"
+  }
+}
